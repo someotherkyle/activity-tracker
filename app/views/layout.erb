@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Activity Tracker</title>
+  </head>
+  <body>
+    <nav>
+      <%if logged_in?%>
+        <a href="/logout">Logout</a>
+      <%end%>
+    </nav>
+    <%=yield%>
+    <footer>
+    </footer>
+  </body>
+</html>

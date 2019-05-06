@@ -1,0 +1,9 @@
+<%if @message%>
+  <%=@message%>
+<%end%>
+
+<form action="/login" method="POST">
+  <p>Email <input type="text" name="email" required/></p>
+  <p>Password <input type="password" name="password" required/></p>
+  <input type="submit" value="Submit"/>
+</form>

@@ -1,0 +1,13 @@
+<%if logged_in?%>
+  <a href="/activities/new">Start a new activity.</a>
+  <h3>Your Activities:</h3>
+  <%current_user.activities.each do |activity|%>
+    <%if activity.is_ongoing?%>
+      <%=activity.name%> was started on <%=Time.at(activity.start_time).strftime("%-m/%d/%Y at %l:%M %p")%> and is ongoing. <strong>PUT LINK TO STOP HERE</strong>
+    <%else%>
+      put completed activities + edit link here
+    <%end%>
+  <%end%>
+<%else%>
+  <p>Welcome to Activity Tracker. Please <a href="/signup">signup</a> or <a href="/login">login</a> to use this site.</p>
+<%end%>

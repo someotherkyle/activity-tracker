@@ -1,0 +1,5 @@
+<p> Hey <%=current_user.username%>, what are you working on?</p>
+<form action='/activities' method="POST">
+  <input type="text" name="name"/>
+  <input type="submit" value="Start"/>
+</form>
