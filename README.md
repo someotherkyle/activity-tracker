@@ -1,11 +1,12 @@
 Activity Tracker is a Sinatra CRUD app that allows a user to create an account, login and out. While logged in, the user can create activities that have a name, start and end time. This information is tracked for the user and allow them to track where their time goes throughout the day. Each activity tracked can be read (displayed on their index page), updated and deleted.
 
+This work is protected under the DBAD License. For more information, please visit https://dbad-license.org/.
+
 # DON'T BE A DICK PUBLIC LICENSE
 
 > Version 1.1, December 2016
 
-> Copyright (C) [year] [fullname]
-
+> Copyright (C) 2019 Kyle Smith
 Everyone is permitted to copy and distribute verbatim or modified
 copies of this license document.
 
