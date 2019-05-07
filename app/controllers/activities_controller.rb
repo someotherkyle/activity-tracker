@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
 
   get '/activities/end/:id' do
     activity = Activity.find_by(id: params[:id])
-    if activity.user_id == current_user.id
+    if logged_in? && activity.user_id == current_user.id
       activity.end_time = Time.now
       activity.save
     end
@@ -36,7 +36,7 @@ class ActivitiesController < ApplicationController
 
   get '/activities/delete/:id' do
     activity = Activity.find_by(id: params[:id])
-    if activity.user_id == current_user.id
+    if logged_in? && activity.user_id == current_user.id
       activity.destroy
     end
     redirect '/'
@@ -44,7 +44,11 @@ class ActivitiesController < ApplicationController
 
   get '/activities/edit/:id' do
     @activity = Activity.find_by(id: params[:id])
-    erb:'activities/edit'
+    if logged_in? && @activity.user_id == current_user.id
+      erb:'activities/edit'
+    else
+      redirect '/'
+    end
   end
 
   patch '/activities/:id' do
