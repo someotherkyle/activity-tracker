@@ -6,7 +6,7 @@
       <th>Start Time</th>
       <th>End Time</th>
       <th>Duration</th>
-      <th>Stop</th>
+      <th>Complete</th>
       <th>Resume</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -24,14 +24,14 @@
           <%end%>
           <%=Time.at(duration).utc.strftime("%H:%M:%S")%>
         </td>
-        <td><%if activity.is_ongoing?%><a href="/activities/end/<%=activity.id%>">Stop</a><%end%></td>
+        <td><%if activity.is_ongoing?%><a href="/activities/end/<%=activity.id%>">Complete</a><%end%></td>
         <td><%if !activity.is_ongoing?%><a href="/activities/resume/<%=activity.id%>">Resume</a><%end%></td>
         <td><a href="/activities/edit/<%=activity.id%>">Edit</a></td>
         <td><a href="activities/delete/<%=activity.id%>">Delete</a></td>
       </tr>
     <%end%>
   </table>
-  <a href="/activities/new">Start a new activity.</a>
+  <center><a href="/activities/new">Start a new activity.</a></center>
 <%else%>
   <p>Welcome to Activity Tracker. Please <a href="/signup">signup</a> or <a href="/login">login</a> to use this site.</p>
 <%end%>

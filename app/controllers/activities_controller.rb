@@ -6,6 +6,9 @@ class ActivitiesController < ApplicationController
   end
 
   post '/activities' do
+    if params[:name] == ''
+      redirect '/activities/new'
+    end
     activity = Activity.new(name: params[:name])
     activity.user_id = current_user.id
     activity.start_time = Time.now
@@ -36,6 +39,17 @@ class ActivitiesController < ApplicationController
     if activity.user_id == current_user.id
       activity.destroy
     end
+    redirect '/'
+  end
+
+  get '/activities/edit/:id' do
+    @activity = Activity.find_by(id: params[:id])
+    erb:'activities/edit'
+  end
+
+  patch '/activities/:id' do
+    activity = Activity.find_by(id: params[:id])
+    activity.update(params[:activity])
     redirect '/'
   end
 end

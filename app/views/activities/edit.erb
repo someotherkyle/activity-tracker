@@ -1,0 +1,8 @@
+<form action='/activities/<%=@activity.id%>' method="POST">
+  <input type="hidden" name="_method" value="patch"/>
+  <p>Activity: <input type="text" name="activity[name]" value="<%=@activity.name%>"/></p>
+  <p>Start Time: <input type="text" name="activity[start_time]" value="<%=@activity.start_time%>"/></p>
+  <p>End Time: <input type="text" name="activity[end_time]" value="<%=@activity.end_time%>"/></p>
+  <input type="submit"/>
+</form>
+
