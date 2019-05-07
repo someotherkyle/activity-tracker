@@ -10,5 +10,6 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem 'dotenv'
 
 #gem 'thin' #included in fwitter project, appears to be some sort of webserver, may be a dep of shotgun ¯\_(ツ)_/¯
