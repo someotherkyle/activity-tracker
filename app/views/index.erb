@@ -1,13 +1,37 @@
 <%if logged_in?%>
-  <a href="/activities/new">Start a new activity.</a>
   <h3>Your Activities:</h3>
-  <%current_user.activities.each do |activity|%>
-    <%if activity.is_ongoing?%>
-      <%=activity.name%> was started on <%=Time.at(activity.start_time).strftime("%-m/%d/%Y at %l:%M %p")%> and is ongoing. <strong>PUT LINK TO STOP HERE</strong>
-    <%else%>
-      put completed activities + edit link here
+  <table style="width:100%">
+    <tr>
+      <th>Name</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Duration</th>
+      <th>Stop</th>
+      <th>Resume</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <%current_user.activities.each do |activity|%>
+      <tr>
+        <td><%=activity.name%></td>
+        <td><%=Time.at(activity.start_time).strftime("%-m/%d/%Y at %l:%M %p")%></td>
+        <td><%if !activity.is_ongoing?%><%=Time.at(activity.end_time).strftime("%-m/%d/%Y at %l:%M %p")%><%end%></td>
+        <td>
+          <%if activity.is_ongoing?%>
+            <%duration = Time.now - activity.start_time%>
+          <%else%>
+            <%duration = activity.end_time - activity.start_time%>
+          <%end%>
+          <%=Time.at(duration).utc.strftime("%H:%M:%S")%>
+        </td>
+        <td><%if activity.is_ongoing?%><a href="/activities/end/<%=activity.id%>">Stop</a><%end%></td>
+        <td><%if !activity.is_ongoing?%><a href="/activities/resume/<%=activity.id%>">Resume</a><%end%></td>
+        <td><a href="/activities/edit/<%=activity.id%>">Edit</a></td>
+        <td><a href="activities/delete/<%=activity.id%>">Delete</a></td>
+      </tr>
     <%end%>
-  <%end%>
+  </table>
+  <a href="/activities/new">Start a new activity.</a>
 <%else%>
   <p>Welcome to Activity Tracker. Please <a href="/signup">signup</a> or <a href="/login">login</a> to use this site.</p>
 <%end%>
