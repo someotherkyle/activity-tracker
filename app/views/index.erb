@@ -27,7 +27,12 @@
         <td><%if activity.is_ongoing?%><a href="/activities/<%=activity.id%>/end">Complete</a><%end%></td>
         <td><%if !activity.is_ongoing?%><a href="/activities/<%=activity.id%>/resume">Resume</a><%end%></td>
         <td><a href="/activities/<%=activity.id%>/edit">Edit</a></td>
-        <td><a href="activities/<%=activity.id%>/delete">Delete</a></td>
+        <td>
+          <form action="/activities/<%=activity.id%>" method="POST">
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="DELETE"/>
+          </form>
+        </td>
       </tr>
     <%end%>
   </table>

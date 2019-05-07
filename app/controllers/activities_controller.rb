@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
     redirect '/'
   end
 
-  get '/activities/:id/delete' do
+  delete '/activities/:id' do
     activity = Activity.find_by(id: params[:id])
     if logged_in? && activity.user_id == current_user.id
       activity.destroy
