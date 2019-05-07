@@ -24,10 +24,10 @@
           <%end%>
           <%=Time.at(duration).utc.strftime("%H:%M:%S")%>
         </td>
-        <td><%if activity.is_ongoing?%><a href="/activities/end/<%=activity.id%>">Complete</a><%end%></td>
-        <td><%if !activity.is_ongoing?%><a href="/activities/resume/<%=activity.id%>">Resume</a><%end%></td>
-        <td><a href="/activities/edit/<%=activity.id%>">Edit</a></td>
-        <td><a href="activities/delete/<%=activity.id%>">Delete</a></td>
+        <td><%if activity.is_ongoing?%><a href="/activities/<%=activity.id%>/end">Complete</a><%end%></td>
+        <td><%if !activity.is_ongoing?%><a href="/activities/<%=activity.id%>/resume">Resume</a><%end%></td>
+        <td><a href="/activities/<%=activity.id%>/edit">Edit</a></td>
+        <td><a href="activities/<%=activity.id%>/delete">Delete</a></td>
       </tr>
     <%end%>
   </table>

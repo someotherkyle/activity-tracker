@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
     redirect '/'
   end
 
-  get '/activities/end/:id' do
+  get '/activities/:id/end' do
     activity = Activity.find_by(id: params[:id])
     if logged_in? && activity.user_id == current_user.id
       activity.end_time = Time.now
@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
     redirect '/'
   end
 
-  get '/activities/resume/:id' do
+  get '/activities/:id/resume' do
     resume = Activity.find_by(id: params[:id])
     activity = Activity.new(name: resume.name)
     activity.user_id = current_user.id
@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
     redirect '/'
   end
 
-  get '/activities/delete/:id' do
+  get '/activities/:id/delete' do
     activity = Activity.find_by(id: params[:id])
     if logged_in? && activity.user_id == current_user.id
       activity.destroy
@@ -42,7 +42,7 @@ class ActivitiesController < ApplicationController
     redirect '/'
   end
 
-  get '/activities/edit/:id' do
+  get '/activities/:id/edit' do
     @activity = Activity.find_by(id: params[:id])
     if logged_in? && @activity.user_id == current_user.id
       erb:'activities/edit'
