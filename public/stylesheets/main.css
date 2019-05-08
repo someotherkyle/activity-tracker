@@ -31,11 +31,11 @@ input[type=submit][value=DELETE]:hover {
 #splash {
   margin:auto;
   text-align: center;
-  padding-top: 33%;
+  padding-top: 20%;
 }
 
 .user_form {
-  padding-top: 33%;
+  padding-top: 20%;
   margin: auto;
 }
 
