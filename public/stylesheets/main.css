@@ -1,8 +1,50 @@
+body {
+  background-color: #002b36;
+  color: #268bd2;
+}
+
+a {
+  color: #859900;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2aa198;
+}
+
+h3 {
+  color: #b58900;
+}
+
+input[type=submit][value=DELETE] {
+  color: #cb4b16;
+  background-color: #073642;
+  border: none;
+}
+
+input[type=submit][value=DELETE]:hover {
+  font-weight: bold;
+  border: 3px solid #d33682;
+  border-radius: 5px;
+}
+
 #splash {
-  margin:auto, auto;
+  margin:auto;
   text-align: center;
   padding-top: 33%;
 }
+
+.user_form {
+  padding-top: 33%;
+  margin: auto;
+}
+
+.user_form tr {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+
 nav a {
   float:right;
 }
