@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+ActivitiesController	app/controllers/activities_controller.rb	/^class ActivitiesController < ApplicationController$/;"	c
+Activity	app/models/activity.rb	/^class Activity < ActiveRecord::Base$/;"	c
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < Sinatra::Base$/;"	c
+CreateActivities	db/migrate/20190506125338_create_activities.rb	/^class CreateActivities < ActiveRecord::Migration[5.2]$/;"	c
+CreateUsers	db/migrate/20190506125328_create_users.rb	/^class CreateUsers < ActiveRecord::Migration[5.2]$/;"	c
+DON'T BE A DICK PUBLIC LICENSE	README.md	/^# DON'T BE A DICK PUBLIC LICENSE$/;"	c
+Specifications for the Sinatra Assessment	spec.md	/^# Specifications for the Sinatra Assessment$/;"	c
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+change	db/migrate/20190506125328_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	db/migrate/20190506125338_create_activities.rb	/^  def change$/;"	f	class:CreateActivities
+current_user	app/controllers/application_controller.rb	/^    def current_user$/;"	S	class:ApplicationController
+find_by_slug	app/models/user.rb	/^  def self.find_by_slug(slug)$/;"	S	class:User
+is_ongoing?	app/models/activity.rb	/^  def is_ongoing?$/;"	f	class:Activity
+logged_in?	app/controllers/application_controller.rb	/^    def logged_in?$/;"	S	class:ApplicationController
+slug	app/models/user.rb	/^  def slug$/;"	f	class:User

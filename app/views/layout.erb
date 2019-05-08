@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>Activity Tracker</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
   </head>
   <body>
     <nav>
       <%if logged_in?%>
-        <a href="/logout" style="float:right">Logout</a>
+        <a href="/logout">Logout</a>
       <%end%>
     </nav>
     <%=yield%>
